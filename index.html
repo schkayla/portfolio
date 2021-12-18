@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KR Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/107e55d9fe.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a class="nav-bar" href="#about">About</a>
+        <a class="nav-bar" href="#projects">Projects</a>
+        <a class="nav-bar" href="#contact">Contact</a>
+      </nav>
+      <section class="flex">
+        <div class="hero">
+          <h1>Kayla Schroetlin</h1>
+          <p>Front end web developer</p>
+        </div>
+        <div class="right-side"></div>
+    </section>
+    </header>
+
+    <main>
+
+      <section id="about">
+        <h3>About Me</h3>
+        <p>With a background in marketing and writing, I bring knowledge of the user experience and customer needs. I've worked with small business owners to build websites, rework content, and improve page rankings. Unofficially deemed the "problem solver" among coworkers. Always in the middle of a book (or three). </p>
+      </section>
+
+      <section id="projects">
+        <h3>My Projects</h3>
+        <div class="project-item">
+          <a href="#"><img src="pexels-katerina-holmes-5905445-small.jpg" alt="">
+          <div class="project-text">
+            <h4>Title</h4>
+            <p>Description about the project</p>
+          </div></a>
+        </div>
+        <div class="project-item">
+          <a href="#"><img src="christin-hume-mfB1B1s4sMc-unsplash-small.jpg" alt="">
+          <div class="project-text">
+            <h4>Title</h4>
+            <p>Description about the project, Description about the project, Description about the project</p>
+          </div></a>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h3>Contact Me</h3>
+        <form action="https://formsubmit.co/your@email.com" method="POST" class="contact-form" />
+          <div class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+          </div>
+          <div class="contact-form">
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="contact-form">
+            <label for="message">Message</label>
+            <textarea type="text" name="message" id="message" required></textarea>
+          </div>
+          <div class="contact-form">
+            <button type="submit" class="contact-button">Send Message</button>
+          </div>
+        </form>
+      </section> 
+
+    </main>
+
+    <footer>
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-js"></i>
+
+    </footer>
+
+	  <script src="index.js"></script>
+    
+  </body>
+</html>
