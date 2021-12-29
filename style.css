@@ -228,8 +228,6 @@ footer {
 
 }
 
-/******** TABLET ********/
-
 @media only screen and (max-width: 1200px) {
     h1 {
         line-height: 1.3em;
