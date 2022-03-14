@@ -11,13 +11,14 @@ body {
     font-family: "Segoe UI", sans-serif;
     font-size: 16px;
     scroll-behavior: smooth;
+    line-height: 1.5em;
 }
 
 a {
     text-decoration: none;
 }
 
-/******** HERO/ABOUT ********/
+/******** HERO ********/
 
 .hero {
     display: flex;
@@ -27,14 +28,14 @@ a {
     width: 100%;
     height: 100vh;
     background:hsl(168, 21%, 19%);
-    color: #fff;
+    color: #EAEDEC;
 }
 
 .about {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 3% 10%;
+    display: grid;
+    grid-template: 1fr / 40% 60%;
+    margin-bottom: 2rem;
+    /* margin-top: 3rem; */
 }
 
 .left {
@@ -44,9 +45,7 @@ a {
 }
 
 .right {
-    padding-left: 5%;
-    max-width: 800px;
-    line-height: 1.5rem;
+    padding-left: 15%;
 } 
 
 .right p {
@@ -57,25 +56,28 @@ h1 {
     font-size: 2.5rem;
 }
 
+h5 {
+    font-weight: normal;
+    color: #a3adaa;
+}
+
 nav {
-    margin: 1rem 0;
+    /* margin-bottom: 2rem; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-bar {
-    display: inline;
     border: 1px solid #fff;
     padding: .3rem 1.5rem;
-    margin: 0 1rem;
-    color: #fff;
+    margin: 1rem;
+    color: #EAEDEC;
     font-size: 14px;
     border-radius: 2px;
-    z-index: 10;
     position: relative;
     scroll-behavior: smooth;
-}
-
-.nav-bar:nth-of-type(1) {
-    margin-left: 0;
 }
 
 .nav-bar:hover, .nav-bar:active {
@@ -90,7 +92,27 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-top: -10%;
+    margin-top: -15%;
+    text-align: center;
+    
+}
+
+/******** ABOUT ********/
+
+#about {
+    background: #EAEDEC;
+    width: 100%;
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about p {
+    width: 50%;
+    margin: 1em;
+    padding-bottom: 0;
 }
 
 /******** PROJECTS ********/
@@ -105,7 +127,8 @@ h3 {
     text-align: center;
     font-size: 1.8rem;
     text-transform: uppercase;
-    color:hsl(168, 21%, 19%)
+    color:hsl(168, 21%, 19%);
+    margin: 1em 0;
 }
 
 .project-item {
@@ -125,11 +148,11 @@ h3 {
 }
 
 h4 {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .project-text p {
-    padding: 1em 4em 2em 0;
+    padding: 1em 3em 1em 0;
 }
 
 h4:hover {
@@ -149,10 +172,7 @@ h4:hover {
 /******** FOOTER/CONTACT ********/
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 0;
+    padding: 2rem 0;
     background:hsl(168, 21%, 19%);
     color: #fff;
 }
@@ -174,7 +194,7 @@ input, textarea {
   box-sizing: border-box;
   background: none;
   border: 1px solid #EAEDEC;
-  margin: 1rem 0;
+  margin: .5rem 0;
   color: #fff;
   vertical-align: middle;
 }
@@ -185,7 +205,7 @@ textarea {
 
 .contact-button {
     padding: .5em 2em;
-    margin: 2rem 0;
+    margin-top: 1rem;
     cursor: pointer;
     border: 1px solid #EAEDEC;
     text-transform: uppercase;
@@ -197,6 +217,12 @@ textarea {
 .contact-button:hover {
     background:#EAEDEC;
     color:hsl(168, 21%, 19%);
+}
+
+footer p {
+    display: block;
+    text-align: right;
+    margin-right: 2em;
 }
 
 /******** MEDIA QUERIES ********/
@@ -211,21 +237,17 @@ textarea {
 @media only screen and (max-width: 900px) {
 
     .about {
-        margin: 0 5%;
+        margin-bottom: 2rem;
     }    
 
-    .hero-peaks {
-        margin-top: 0;
+    #about p {
+        width: 70%;
     }
     
     .project-item {
         flex-direction: column;
         align-items: center;
         max-width: 80%;
-    }
-
-    svg {
-        transform: translateX(-15%) translateY(-10%);
     }
 }
 
@@ -236,41 +258,43 @@ textarea {
     }
 
     .hero {
-        justify-content: space-around;
-        align-items: flex-start;
+        justify-content: center;
     }
     
     .about {
-        flex-wrap: wrap;
-        justify-content: flex-start;
+        grid-template: 1fr / 1fr;
+        margin-bottom: 3em;
     }    
+
+    h1 {
+        font-size: 2rem;
+    }
 
     .left {
         text-align: left;
         padding-bottom: 1rem;
+        line-height: 2rem;
     }
     
     .right {
         padding-left: 0;
-        width: 95%;
-        flex-grow: 1;
     } 
 
     .right p {
-        padding-bottom: 2rem;
+        padding-bottom: .5rem;
     }
 
     .nav-bar {
-        margin: 0 .5rem;
-        padding: 0.3rem 1rem;
-    }
-
-    .nav-bar:nth-of-type(3) {
-        margin-right: 0;
+        padding: 0.5rem 2rem;
     }
 
     .hero-peaks {
         display: none;
+    }
+
+    
+    #about p {
+        width: 85%;
     }
 
     h3 {
@@ -292,5 +316,10 @@ textarea {
     .project-image {
         width: 100%;
         margin: 0 auto;
+    }
+
+    footer p {
+        text-align: center;
+        margin: 1.5rem 0 0 0;
     }
 }
