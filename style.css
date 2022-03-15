@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -10,7 +11,6 @@ html {
 body {
     font-family: "Segoe UI", sans-serif;
     font-size: 16px;
-    scroll-behavior: smooth;
     line-height: 1.5em;
 }
 
@@ -128,7 +128,7 @@ h3 {
     font-size: 1.8rem;
     text-transform: uppercase;
     color:hsl(168, 21%, 19%);
-    margin: 1em 0;
+    margin-bottom: 1em;
 }
 
 .project-item {
@@ -169,54 +169,35 @@ footer {
     padding: 2rem 0;
     background:hsl(168, 21%, 19%);
     color: #fff;
-}
-
-.contact-form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-label {
-    display: inline;
-    width: 10%;
-  }
-
-input, textarea {
-  font: 1rem sans-serif;
-  width: 100%;
-  box-sizing: border-box;
-  background: none;
-  border: 1px solid #EAEDEC;
-  margin: .5rem 0;
-  color: #fff;
-  vertical-align: middle;
+.footer-text {
+    width: 30%;
+    text-align: center;
 }
 
-textarea {
-    height: 4rem;
-}
-
-.contact-button {
-    padding: .5em 2em;
-    margin-top: 1rem;
-    cursor: pointer;
-    border: 1px solid #EAEDEC;
-    text-transform: uppercase;
-    background: none;
-    letter-spacing: .08em;
+.white-text {
     color: #fff;
+    padding-top: 1em;
 }
 
-.contact-button:hover {
-    background:#EAEDEC;
-    color:hsl(168, 21%, 19%);
+.link-text {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #fff;
 }
 
-footer p {
-    display: block;
-    text-align: right;
-    margin-right: 2em;
+.link-text:hover, .link-text:active {
+    text-decoration-color: #a3adaa;
+    color: #a3adaa;
+}
+
+.copyright {
+    margin-top: 4em;
 }
 
 /******** MEDIA QUERIES ********/
@@ -230,26 +211,20 @@ footer p {
 
 @media only screen and (max-width: 900px) {
 
-    .about {
-        margin-bottom: 2rem;
-    }    
-
     #about p {
         width: 70%;
     }
     
     .project-item {
-        flex-direction: column;
-        align-items: center;
         max-width: 80%;
+    }
+
+    .footer-text {
+        width: 50%;
     }
 }
 
 @media only screen and (max-width: 500px) {
-    
-    body {
-        font-size: 14px;
-    }
 
     .hero {
         justify-content: center;
@@ -257,7 +232,7 @@ footer p {
     
     .about {
         grid-template: 1fr / 1fr;
-        margin-bottom: 3em;
+        margin: 0 1em 3em 1em ;
     }    
 
     h1 {
@@ -286,34 +261,15 @@ footer p {
         display: none;
     }
 
-    
     #about p {
         width: 85%;
     }
 
-    h3 {
-        padding: 0;
-        text-align: center;
-    }
-
     .project-item {
-        flex-wrap: wrap;
         width: 95%;
-        margin: 2em auto;
     }
 
-    .project-text p {
-        margin: 0 auto;
-        padding: 1em 0 2em 0;
-    }
-
-    .project-image {
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    footer p {
-        text-align: center;
-        margin: 1.5rem 0 0 0;
+    .footer-text {
+        width: 70%;
     }
 }
