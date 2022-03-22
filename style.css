@@ -49,10 +49,14 @@ a {
     text-align: right;
     line-height: 3rem;
     letter-spacing: .07rem;
+    animation: appear 1s ease-in;
 }
 
 .right {
     padding-left: 15%;
+    opacity: 0;
+    animation: appear-right 1s ease-in .5s;
+    animation-fill-mode: forwards;
 } 
 
 .right p {
@@ -75,6 +79,9 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    animation: appear 1s ease-in 2s;
+    animation-fill-mode: forwards;
 }
 
 .nav-bar {
@@ -232,6 +239,31 @@ footer {
 
 .copyright {
     margin-top: 4em;
+}
+
+/******** KEYFRAMES ********/
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appear-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    90% {
+        opacity: .6;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /******** MEDIA QUERIES ********/
