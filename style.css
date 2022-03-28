@@ -128,10 +128,19 @@ nav {
     align-items: center;
 }
 
-#about p {
-    width: 50%;
-    margin: 1em;
-    padding-bottom: 0;
+#about img {
+    max-width: 300px;
+    padding-right: 2em;
+}
+
+.about-flex {
+    display: flex;
+    align-items: flex-start;
+    max-width: 60%;
+}
+
+.about-text p {
+    padding-bottom: 1em;
 }
 
 /******** PROJECTS ********/
@@ -144,7 +153,7 @@ h2 {
     text-align: center;
     font-size: 1.8rem;
     text-transform: uppercase;
-    margin: 1em;
+    margin: 2em;
 }
 
 .project-item {
@@ -157,7 +166,7 @@ h2 {
     max-width: 50%;
 }
 
-.flex {
+.project-flex {
     display: flex;
     align-items: center;
 }
@@ -177,15 +186,6 @@ h3 {
 
 .move-right {
     margin: 1em .5em 1em auto;
-    margin-left: auto;
-}
-
-.languages:last-child {
-    margin-right: 0;
-}
-
-.languages:only-child {
-    margin: 1em;
 }
 
 .project-text p {
@@ -223,7 +223,7 @@ footer {
 }
 
 .white-text {
-    padding-top: 1em;
+    margin: 1.2em;
 }
 
 .link-text {
@@ -275,11 +275,14 @@ footer {
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
 
-    #about p {
-        width: 70%;
+    .about-flex {
+        max-width: 80%;
     }
+}
+
+@media only screen and (max-width: 900px) {
 
     h3 {
         text-decoration: underline;
@@ -302,7 +305,7 @@ footer {
     
     .title {
         grid-template: 1fr / 1fr;
-        margin: 0 1em 3em 1em ;
+        margin: 3em 1em ;
     }    
 
     h1 {
@@ -311,7 +314,7 @@ footer {
 
     .left {
         text-align: left;
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
         line-height: 2rem;
     }
     
@@ -323,6 +326,10 @@ footer {
         padding-bottom: .5rem;
     }
 
+    .nav {
+        margin-top: 1em;
+    }
+
     .nav-bar {
         padding: 0.5rem 2rem;
     }
@@ -331,11 +338,18 @@ footer {
         display: none;
     }
 
-    #about p {
-        width: 85%;
+    .about-flex {
+        flex-direction: column;
+        max-width: 90%;
+        align-items: center;
     }
 
-    .flex {
+    #about img {
+        max-width: 250px;
+        padding: 0 0 2em 0;
+    }
+
+    .project-flex {
         flex-wrap: wrap;
     }
 
@@ -343,13 +357,9 @@ footer {
         flex-basis: 100%;
         height: 0;
     }
-    
-    .move-right {
-        margin: 0;
-    }
 
-    .languages:last-child {
-        margin-right: auto;
+    .move-right {
+        margin: 1em 0;
     }
 
     .project-item {
