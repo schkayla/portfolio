@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+    <div id="hero-slider">
+        <div id="name" class="mask">
+            <a href=""><p class="name-text">Kayla Schroetlin</p></a>
+        </div>
+        <main id="slideshow">
+            <section id="slide-one" class="active" index="0">
+                <div class="one-img">
+                    <img src="images/portfolio-2-square.avif" alt="kayla smiling with arms crossed"> 
+                </div>
+                <div class="one-content paragraph-spacing">
+                    <h1 class="">Hey I'm Kayla</h1>
+                    <p class="">I build things with JavaScript, CSS, and HTML</p>
+                </div>
+            </section>
+            <section id="slide-two" index="1">
+                <!-- desktop content two columns -->
+                <div class="two-content paragraph-spacing column">
+                    <p>After graduating with BAs in Communication and Linguistics, I worked in marketing. But after working with contracted developers and becoming curious about web development, marketing quickly lost its luster.</p>
+                    <p>I’ve always enjoyed puzzles, and not just casual puzzles, but the most challenging puzzles I can find. So when I learned that programming is problem solving, I started learning HTML that very day.</p>
+                    <p>In my current role, I have streamlined tedious processes, fixed bugs on the website, and troubleshooted WordPress issues.</p> 
+                </div>
+                <div class="two-content paragraph-spacing column">
+                    <p>Recently, I completed a training on security and WordPress. I have also consulted with small business owners, helping them build websites, improve page rankings, and rework content.</p>
+                    <p>One of the projects I'm working on right now is a bookshelf to keep track of what I've read and want to read using Google Sheets and an API deployed on Heroku.</p>
+                    <p>I’m ready to transition into a full-time developer role where I can learn from other developers while achieving goals and improving processes.</p>
+                    <p>Also a cat mom, avid classic sci-fi reader, and sometimes musician.</p>
+                </div>
+                <!-- mobile content single column -->
+                <div class="two-content-mobile paragraph-spacing">
+                    <p>After working in marketing for a while and working with contracted developers, I got curious about how websites are built. I enjoy a challenge, so when I learned that programming is problem solving, I started learning HTML the same day.</p>
+                    <p>In my current role I've maintained websites, deployed a new website, and streamlined tedius processes. Recently, I completed a training on security and WordPress. I've also consulted with small business owners, helping them build or improve their websites and page rankings.</p>
+                    <p>I’m ready to transition into a full-time developer role where I can learn from other developers while achieving goals and improving processes. Also a cat mom, avid classic sci-fi reader, and sometimes musician.</p>
+                </div>
+            </section>
+            <section id="slide-three" index="2">
+                <div class="three-content paragraph-spacing column">
+                    <h2><a class="outbound-link" href="https://schkayla.github.io/my-bookshelf/" target="_blank">My Bookshelf</a></h2>
+                    <p>an interactive way to see the books I've read and want to read, add and delete books from the database, and search by title or author</p>
+                    <p class="small-text">Node.js | JavaScript | CSS | API</p>
+                    <div class="flex-link">
+                        <a class="" href="https://github.com/schkayla/my-bookshelf" target="_blank">GitHub</a>
+                        <span class="material-symbols-outlined arrow">arrow_right_alt</span>
+                    </div>
+                </div>
+                <div class="three-img paragraph-spacing column">
+                    <img src="images/bookshelf-mockup.png" alt="project mockup desktop and mobile">
+                </div>                
+            </section>
+            <section id="slide-four" index="3">
+                <div class="four-content paragraph-spacing column">
+                    <img class="four-img" src="images/timer-mockup.png">
+                    <h2><a class="outbound-link" href="https://schkayla.github.io/pomodoro-timer/" target="_blank">Music Pomodoro</a></h2>
+                    <p class="description">increase productivity by listening to a playlist while you work. Music pauses during break time so you don't have to watch the clock</p>
+                    <p class="small-text"> JavaScript | CSS | HTML</p>
+                    <div class="flex-link">
+                        <a class="" href="https://github.com/schkayla/pomodoro-timer" target="_blank">GitHub</a>
+                        <span class="material-symbols-outlined arrow">arrow_right_alt</span>
+                    </div>
+                </div>
+                <div class="four-content paragraph-spacing column">
+                    <img class="four-img" src="images/paradise-cakes-mockup.png">
+                    <h2><a class="outbound-link" href="https://schkayla.github.io/paradise-cakes/" target="_blank">Paradise Cakes</a></h2>
+                    <p class="description">brochure website for a client starting a new business, working on layout with this draft</p>
+                    <p class="small-text">CSS | HTML | JavaScript</p>
+                    <div class="flex-link">
+                        <a class="" href="https://github.com/schkayla/paradise-cakes" target="_blank">GitHub</a>
+                        <span class="material-symbols-outlined arrow">arrow_right_alt</span>
+                    </div>
+                </div>                
+            </section>
+            <section id="slide-five" index="4">
+                <div class="five-content paragraph-spacing">
+                    <h2 class="">Contact</h2>
+                    <p class="">send me an <a  class="outbound-link bold" href="mailto:schkayla@gmail.com" target="_blank">email</a></p>
+                </div>
+                <!-- desktop image -->
+                <div class="five-img">
+                    <img src="images/pexels-alex-conchillos-3745234.avif" alt="stars in space">
+                </div>
+                <!-- mobile image -->
+                <div class="five-img-mobile">
+                    <img src="images/pexels-alex-conchillos-3745234-mobile.avif" alt="stars in space">
+                </div>
+            </section>
+        </main>
+        <nav id="slider-nav">
+            <a id="about">About</a>
+            <a id="projects">Projects</a>
+            <a id="contact">Contact</a>
+        </nav>
+    </div>
+
+
+    <script src="slider.js"></script>
+</body>
+</html>
