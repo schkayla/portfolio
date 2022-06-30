@@ -1,134 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>kayrae portfolio</title>
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  </head>
-
-  <body>
-      
-    <section class="hero">
-
-      <div class="title">
-        <div class="left">
-          <h1>Kayla Schroetlin</h1>
-          <p>web developer</p>
+</head>
+<body>
+    <div id="hero-slider">
+        <div id="name" class="mask">
+            <a href=""><p class="name-text">Kayla Schroetlin</p></a>
         </div>
-        <div class="right">
-          <h2>JavaScript developer with a background in digital marketing, writing, and UX</h2>
-        </div>
-      </div>
-      <nav>
-        <a class="nav-bar" href="#about">About</a>
-        <a class="nav-bar" href="#projects">Projects</a>
-        <a class="nav-bar" href="#contact">Contact</a>
-        <a class="nav-bar" href="https://github.com/schkayla" target="_blank">GitHub</a>
-      </nav>
+        <main id="slideshow">
+            <section id="slide-one" class="active" index="0">
+                <div class="one-img">
+                    <img src="images/portfolio-2-square.avif" alt="kayla smiling with arms crossed"> 
+                </div>
+                <div class="one-content paragraph-spacing">
+                    <h1 class="">Hey I'm Kayla</h1>
+                    <p class="">I build things with JavaScript, CSS, and HTML</p>
+                </div>
+            </section>
+            <section id="slide-two" index="1">
+                <!-- desktop content two columns -->
+                <div class="two-content paragraph-spacing column">
+                    <p>After graduating with BAs in Communication and Linguistics, I worked in marketing. But after working with contracted developers and becoming curious about web development, marketing quickly lost its luster.</p>
+                    <p>I’ve always enjoyed puzzles, and not just casual puzzles, but the most challenging puzzles I can find. So when I learned that programming is problem solving, I started learning HTML that very day.</p>
+                    <p>In my current role, I have streamlined tedious processes, fixed bugs on the website, and troubleshooted WordPress issues.</p> 
+                </div>
+                <div class="two-content paragraph-spacing column">
+                    <p>Recently, I completed a training on security and WordPress. I have also consulted with small business owners, helping them build websites, improve page rankings, and rework content.</p>
+                    <p>One of the projects I'm working on right now is a bookshelf to keep track of what I've read and want to read using Google Sheets and an API deployed on Heroku.</p>
+                    <p>I’m ready to transition into a full-time developer role where I can learn from other developers while achieving goals and improving processes.</p>
+                    <p>Also a cat mom, avid classic sci-fi reader, and sometimes musician.</p>
+                </div>
+                <!-- mobile content single column -->
+                <div class="two-content-mobile paragraph-spacing">
+                    <p>After working in marketing for a while and working with contracted developers, I got curious about how websites are built. I enjoy a challenge, so when I learned that programming is problem solving, I started learning HTML the same day.</p>
+                    <p>In my current role I've maintained websites, deployed a new website, and streamlined tedius processes. Recently, I completed a training on security and WordPress. I've also consulted with small business owners, helping them build or improve their websites and page rankings.</p>
+                    <p>I’m ready to transition into a full-time developer role where I can learn from other developers while achieving goals and improving processes. Also a cat mom, avid classic sci-fi reader, and sometimes musician.</p>
+                </div>
+            </section>
+            <section id="slide-three" index="2">
+                <div class="three-content paragraph-spacing column">
+                    <h2><a class="outbound-link" href="https://schkayla.github.io/my-bookshelf/" target="_blank">My Bookshelf</a></h2>
+                    <p>an interactive way to see the books I've read and want to read, add and delete books from the database, and search by title or author</p>
+                    <p class="small-text">Node.js | JavaScript | CSS | API</p>
+                    <div class="flex-link">
+                        <a class="" href="https://github.com/schkayla/my-bookshelf" target="_blank">GitHub</a>
+                        <span class="material-symbols-outlined arrow">arrow_right_alt</span>
+                    </div>
+                </div>
+                <div class="three-img paragraph-spacing column">
+                    <img src="images/bookshelf-mockup.png" alt="project mockup desktop and mobile">
+                </div>                
+            </section>
+            <section id="slide-four" index="3">
+                <div class="four-content paragraph-spacing column">
+                    <img class="four-img" src="images/timer-mockup.png">
+                    <h2><a class="outbound-link" href="https://schkayla.github.io/pomodoro-timer/" target="_blank">Music Pomodoro</a></h2>
+                    <p class="description">increase productivity by listening to a playlist while you work. Music pauses during break time so you don't have to watch the clock</p>
+                    <p class="small-text"> JavaScript | CSS | HTML</p>
+                    <div class="flex-link">
+                        <a class="" href="https://github.com/schkayla/pomodoro-timer" target="_blank">GitHub</a>
+                        <span class="material-symbols-outlined arrow">arrow_right_alt</span>
+                    </div>
+                </div>
+                <div class="four-content paragraph-spacing column">
+                    <img class="four-img" src="images/paradise-cakes-mockup.png">
+                    <h2><a class="outbound-link" href="https://schkayla.github.io/paradise-cakes/" target="_blank">Paradise Cakes</a></h2>
+                    <p class="description">brochure website for a client starting a new business, working on layout with this draft</p>
+                    <p class="small-text">CSS | HTML | JavaScript</p>
+                    <div class="flex-link">
+                        <a class="" href="https://github.com/schkayla/paradise-cakes" target="_blank">GitHub</a>
+                        <span class="material-symbols-outlined arrow">arrow_right_alt</span>
+                    </div>
+                </div>                
+            </section>
+            <section id="slide-five" index="4">
+                <div class="five-content paragraph-spacing">
+                    <h2 class="">Contact</h2>
+                    <p class="">send me an <a  class="outbound-link bold" href="mailto:schkayla@gmail.com" target="_blank">email</a></p>
+                </div>
+                <!-- desktop image -->
+                <div class="five-img">
+                    <img src="images/pexels-alex-conchillos-3745234.avif" alt="stars in space">
+                </div>
+                <!-- mobile image -->
+                <div class="five-img-mobile">
+                    <img src="images/pexels-alex-conchillos-3745234-mobile.avif" alt="stars in space">
+                </div>
+            </section>
+        </main>
+        <nav id="slider-nav">
+            <a id="about">About</a>
+            <a id="projects">Projects</a>
+            <a id="contact">Contact</a>
+        </nav>
+    </div>
 
-      <div class="hero-peaks"></div>
-    </section>
 
-    <section id="about" class="middle">
-      <h3>About Me</h3>
-      <div class="about-flex">
-        <img data-aos="fade-up" data-aos-once="true" src="portfolio-2.jpg" alt="woman smiling with arms crossed">
-        <div class="about-text">
-          <p data-aos="fade-up" data-aos-once="true">After graduating with BAs in Communication and Linguistics, I worked in marketing for a few years. But after working with contracted developers and becoming curious about web development, marketing quickly lost its luster.</p> 
-          <p data-aos="fade-up" data-aos-once="true">I’ve always enjoyed puzzles: jigsaw, logic, sudoku, kakuro. So when I learned that programming is problem solving, I was sold.</p>
-          <p data-aos="fade-up" data-aos-once="true">In my current role, I serve as the problem solver and website manager for the marketing team. I’ve been able to streamline tedious processes, fix bugs on the website, and troubleshoot WordPress issues.</p> 
-          <p data-aos="fade-up" data-aos-once="true">Recently, I completed a training on security and WordPress. I’ve also done some consulting with small business owners, helping them improve page rankings, rework content, and build websites.</p>
-          <p data-aos="fade-up" data-aos-once="true">Being a self-taught developer (and with most of my learning happening during the pandemic), my journey has been siloed. I’m ready to take on a full-time role where I can learn from other developers while moving a company’s goals forward and helping improve processes and systems.</p>
-          <p data-aos="fade-up" data-aos-once="true">Also a cat mom, avid classic sci-fi reader, and sometimes musician.</p>
-        </div>
-      </div>
-      <div class="about-flex">
-        <h5 class="skills-title" data-aos="fade-up" data-aos-once="true">Skills</h5>
-        <div class="skills about-text" data-aos="fade-up" data-aos-once="true">
-          <h5>comfortable with</h5>
-          <p>JavaScript (ES6), CSS3, HTML5, Responsive Design</p>
-          <h5>getting familiar with</h5>
-          <p>React, Redux, Node.js, PHP, Git, SASS, Bootstrap</p>
-          <h5>other skills</h5>
-          <p>UI/UX, Usability Testing, InDesign, XD, Figma</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="middle">
-      <h3>Projects</h3>
-
-      <div class="project-item">
-        <div class="project-text" data-aos="fade-up" data-aos-once="true">
-          <div class="project-flex">
-            <h4><a href="https://schkayla.github.io/my-bookshelf/" target="_blank">My Bookshelf</a></h4>
-            <span class="break"></span>
-            <span class="languages move-right">Node.js</span>
-            <span class="languages">API</span>
-            <span class="languages">JavaScript</span>
-            <span class="languages">CSS</span>
-          </div>
-
-          <a href="https://schkayla.github.io/my-bookshelf/" target="_blank"><img class="project-image" src="bookshelf-1.png" alt="my bookshelf"></a>
-
-          <p>Since I'm an avid reader, I'm always looking for a better way to keep track of the books I've read. This project utilizes an API I created and deployed on Heroku using a Google Sheets database.</p>
-          <p>The search feature on the sidebar allows you to filter by book titles and authors. Working on functionality to add and remove books from the database.</p>
-          <a href="https://github.com/schkayla/my-bookshelf/tree/master" target="_blank"><p class="underline">GitHub</p></a>
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-text" data-aos="fade-up" data-aos-once="true">
-          <div class="project-flex">
-            <h4><a href="https://schkayla.github.io/pomodoro-timer/" target="_blank">Pomodoro of Sorts</a></h4>
-            <span class="break"></span>
-            <span class="languages move-right">JavaScript</span>
-            <span class="languages">CSS</span>
-          </div>  
-
-          <a href="https://schkayla.github.io/pomodoro-timer/" target="_blank"><img class="project-image" src="timer-music-large.png" alt="pomodoro timer site"><a>
-      
-          <p>I thought of this project when I couldn’t find good playlists combined with a timer like pomodoro. The goal is to have music playing while working and paused while on break, so you don’t have to watch the clock but can follow the music cues.</p> 
-          <p>I was going to connect this to my Spotify playlists, but learned that the Spotify API has restrictions, so I’m still figuring out if Spotify will work here. For now I found some YouTube playlists that kind of work with this idea.</p>
-          <a href="https://github.com/schkayla/pomodoro-timer" target="_blank"><p class="underline">GitHub</p></a>
-        </div>
-      </div>
-
-      <div class="project-item">
-        <div class="project-text" data-aos="fade-up" data-aos-once="true">
-          <div class="project-flex">
-            <h4><a href="https://schkayla.github.io/paradise-cakes/" target="_blank">Paradise Cakes</a></h4>
-            <span class="break"></span>
-            <span class="languages move-right">JavaScript</span>
-            <span class="languages">CSS</span>
-            <span class="languages">HTML</span>
-          </div>
-          
-          <a href="https://schkayla.github.io/paradise-cakes/" target="_blank"><img class="project-image" src="paradise-cakes-large.png" alt="paradise cakes site"></a>
-
-          <p>This is a brochure website for a client, the initial stage of the design layout before adding the content. It’s a new business, so this is their first website, and they need something simple to start gaining in page rankings and grow their online presence.</p>
-          <a href="https://github.com/schkayla/paradise-cakes" target="_blank"><p class="underline">GitHub</p></a>
-        </div>
-      </div>
-
-    </section>
-
-    <footer id="contact">
-      <h3 class="white-text">Get in Touch</h3>
-      
-      <p class="footer-text">If you have any questions or would like to see my resume, send me an <a  class="link-text" href="mailto:schkayla@gmail.com" target="_blank">email</a></p>
-      
-      <p class="copyright">©kayrae portfolio</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    
-  </body>
+    <script src="slider.js"></script>
+</body>
 </html>
