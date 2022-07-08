@@ -12,31 +12,33 @@ const contactNav = document.getElementById('contact');
 const allSlides = document.querySelectorAll('section');
 const allNavs = document.querySelectorAll('nav a');
 
-// const activeSlide = document.querySelector('.active');
-// const nextSlide = activeSlide.nextElementSibling;
-// const previousSlide = activeSlide.previousElementSibling;
+let activeSlide = document.querySelector('.active');
+let nextSlide = activeSlide.nextElementSibling;
+let previousSlide;
 
 
+let idle = true;
 
-let counter = 0;
+const changeSlide = (direction) => {
+    idle = false;
+    toggleIdle();
 
-const animateSlide = () => {
-    if (counter >= 0 && counter < 30) {
-        allSlides.forEach(slide => slide.classList.remove('active'));
-        slideOne.classList.add('active');
-    } else if (counter >= 30 && counter < 60) {
-        allSlides.forEach(slide => slide.classList.remove('active'));
-        slideTwo.classList.add('active');
-    } else if (counter >= 60 && counter < 90) {
-        allSlides.forEach(slide => slide.classList.remove('active'));
-        slideThree.classList.add('active');
-    } else if (counter > 90 && counter < 120) {
-        allSlides.forEach(slide => slide.classList.remove('active'));
-        slideFour.classList.add('active');
-    } else if (counter > 120 && counter < 150) {
-        allSlides.forEach(slide => slide.classList.remove('active'));
-        slideFive.classList.add('active');
-    }
+    if (direction === 'next' && nextSlide !== null) {
+        activeSlide.classList.remove('active');
+        activeSlide = nextSlide;
+        activeSlide.classList.add('active');
+        nextSlide = activeSlide.nextElementSibling;
+        previousSlide = activeSlide.previousElementSibling;
+        console.log('next');
+    } else if (direction === 'prev' && previousSlide !== null) {
+        activeSlide.classList.remove('active');
+        activeSlide = previousSlide;
+        activeSlide.classList.add('active');
+        previousSlide = activeSlide.previousElementSibling;
+        nextSlide = activeSlide.nextElementSibling;
+        console.log('prev');
+    } else return;
+
     changeBackground();
     changeNavActive();
 }
@@ -53,7 +55,7 @@ const changeNavActive = () => {
     allNavs.forEach(nav => nav.classList.remove('nav-active'))
     if (slideTwo.classList.contains('active')) {
         aboutNav.classList.add('nav-active');
-     } else if (slideThree.classList.contains('active') || slideFour.       classList.contains('active')) {
+     } else if (slideThree.classList.contains('active') || slideFour.classList.contains('active')) {
         projectsNav.classList.add('nav-active');
      } else if (slideFive.classList.contains('active')) {
         contactNav.classList.add('nav-active');
@@ -61,18 +63,20 @@ const changeNavActive = () => {
 
 }
 
+const toggleIdle = () => {
+    let timer;
+    clearTimeout(timer);
+    setTimeout(() => {
+        idle = true;
+    }, 1000)
+    return timer;
+}
+
 scrollContainer.addEventListener('wheel', (e) => {
     e.preventDefault();
-    animateSlide();
-
-    if (e.deltaY < 0) {
-        counter -= 1;
-    } else counter += 1;
-
-    if (counter < 0) {
-        counter = 0;
-    } else if (counter > 150) {
-        counter = 150;
+    let direction = e.deltaY > 0 ? 'next' : 'prev';
+    if (idle && (e.deltaY > 4 || e.deltaY < -4)) {
+        changeSlide(direction);
     }
 })
 
@@ -82,7 +86,6 @@ aboutNav.addEventListener('click', () => {
     allSlides.forEach(slide => slide.classList.remove('active'));
     slideTwo.classList.add('active');
     changeBackground();
-    counter = 40;
 })
 
 projectsNav.addEventListener('click', () => {
@@ -91,7 +94,6 @@ projectsNav.addEventListener('click', () => {
     allSlides.forEach(slide => slide.classList.remove('active'));
     slideThree.classList.add('active');
     changeBackground();
-    counter = 70;
 })
 
 contactNav.addEventListener('click', () => {
@@ -100,6 +102,18 @@ contactNav.addEventListener('click', () => {
     allSlides.forEach(slide => slide.classList.remove('active'));
     slideFive.classList.add('active');
     changeBackground();
-    counter = 130;
 })
 
+scrollContainer.addEventListener('touchstart', () => {
+    e.preventDefault();
+    startDirection = parseInt(e.changedTouches[0].clientX)
+})
+
+scrollContainer.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    moveDirection = parseInt(e.changedTouches[0].clientX);
+    const delta = moveDirection - startDirection;
+    const direction = delta < 0 ? 'next' : 'prev';
+
+    changeSlide(direction);
+})

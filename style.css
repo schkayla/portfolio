@@ -294,6 +294,10 @@ a:hover {
         /* line-height: 1.4; */
     }
 
+    #name {
+        height: 8vh;
+    }
+
     #slide-one, #slide-two, #slide-four {
         flex-direction: column;
     }
@@ -311,8 +315,6 @@ a:hover {
         justify-content: center;
         align-items: center;
     }
-
-    
 
     .one-content {
         padding-left: 0;
@@ -368,6 +370,10 @@ a:hover {
     .five-img-mobile > img {
         /* object-fit: contain; */
         overflow: hidden;
+    }
+
+    #slider-nav {
+        height: 18vh;
     }
 
 }
