@@ -104,7 +104,10 @@ contactNav.addEventListener('click', () => {
     changeBackground();
 })
 
-scrollContainer.addEventListener('touchstart', () => {
+let startDirection;
+let moveDirection;
+
+scrollContainer.addEventListener('touchstart', (e) => {
     e.preventDefault();
     startDirection = parseInt(e.changedTouches[0].clientX)
 })
@@ -115,5 +118,7 @@ scrollContainer.addEventListener('touchmove', (e) => {
     const delta = moveDirection - startDirection;
     const direction = delta < 0 ? 'next' : 'prev';
 
-    changeSlide(direction);
+    if (idle) {
+        changeSlide(direction);
+    }
 })
