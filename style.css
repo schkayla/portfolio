@@ -347,6 +347,10 @@ a:hover {
     .three-img > img {
         max-width: 300px;
     }
+
+    .four-content {
+        margin-top: 2em;
+    }
     
     .four-img {
         display: none;
@@ -372,8 +376,8 @@ a:hover {
         overflow: hidden;
     }
 
-    #slider-nav {
+    /* #slider-nav {
         height: 18vh;
-    }
+    } */
 
 }

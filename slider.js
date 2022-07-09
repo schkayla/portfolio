@@ -1,9 +1,9 @@
 const scrollContainer = document.querySelector('#hero-slider');
-const slideOne = document.getElementById('slide-one');
-const slideTwo = document.getElementById('slide-two');
-const slideThree = document.getElementById('slide-three');
-const slideFour = document.getElementById('slide-four');
-const slideFive = document.getElementById('slide-five');
+let slideOne = document.getElementById('slide-one');
+let slideTwo = document.getElementById('slide-two');
+let slideThree = document.getElementById('slide-three');
+let slideFour = document.getElementById('slide-four');
+let slideFive = document.getElementById('slide-five');
 
 const aboutNav = document.getElementById('about');
 const projectsNav = document.getElementById('projects');
@@ -29,14 +29,12 @@ const changeSlide = (direction) => {
         activeSlide.classList.add('active');
         nextSlide = activeSlide.nextElementSibling;
         previousSlide = activeSlide.previousElementSibling;
-        console.log('next');
     } else if (direction === 'prev' && previousSlide !== null) {
         activeSlide.classList.remove('active');
         activeSlide = previousSlide;
         activeSlide.classList.add('active');
         previousSlide = activeSlide.previousElementSibling;
         nextSlide = activeSlide.nextElementSibling;
-        console.log('prev');
     } else return;
 
     changeBackground();
@@ -80,29 +78,45 @@ scrollContainer.addEventListener('wheel', (e) => {
     }
 })
 
-aboutNav.addEventListener('click', () => {
+allNavs.forEach(nav => nav.addEventListener('click', () => {
     allNavs.forEach(nav => nav.classList.remove('nav-active'));
-    aboutNav.classList.add('nav-active');
     allSlides.forEach(slide => slide.classList.remove('active'));
-    slideTwo.classList.add('active');
+    if (nav === aboutNav) {
+        aboutNav.classList.add('nav-active');
+        activeSlide = slideTwo;
+    } else if (nav === projectsNav) {
+        projectsNav.classList.add('nav-active');
+        activeSlide = slideThree;
+    } else if (nav === contactNav) {
+        contactNav.classList.add('nav-active');
+        activeSlide = slideFive;
+    }
+    activeSlide.classList.add('active');
+    nextSlide = activeSlide.nextElementSibling;
+    previousSlide = activeSlide.previousElementSibling;
     changeBackground();
-})
+}))
 
-projectsNav.addEventListener('click', () => {
-    allNavs.forEach(nav => nav.classList.remove('nav-active'));
-    projectsNav.classList.add('nav-active');
-    allSlides.forEach(slide => slide.classList.remove('active'));
-    slideThree.classList.add('active');
-    changeBackground();
-})
+// Mobile
 
-contactNav.addEventListener('click', () => {
+allNavs.forEach(nav => nav.addEventListener('touchend', () => {
     allNavs.forEach(nav => nav.classList.remove('nav-active'));
-    contactNav.classList.add('nav-active');
     allSlides.forEach(slide => slide.classList.remove('active'));
-    slideFive.classList.add('active');
+    if (nav === aboutNav) {
+        aboutNav.classList.add('nav-active');
+        activeSlide = slideTwo;
+    } else if (nav === projectsNav) {
+        projectsNav.classList.add('nav-active');
+        activeSlide = slideThree;
+    } else if (nav === contactNav) {
+        contactNav.classList.add('nav-active');
+        activeSlide = slideFive;
+    }
+    activeSlide.classList.add('active');
+    nextSlide = activeSlide.nextElementSibling;
+    previousSlide = activeSlide.previousElementSibling;
     changeBackground();
-})
+}))
 
 let startDirection;
 let moveDirection;
