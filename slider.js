@@ -16,26 +16,22 @@ let activeSlide = document.querySelector('.active');
 let nextSlide = activeSlide.nextElementSibling;
 let previousSlide;
 
-
 let idle = true;
 
 const changeSlide = (direction) => {
     idle = false;
     toggleIdle();
 
+    activeSlide.classList.remove('active');
     if (direction === 'next' && nextSlide !== null) {
-        activeSlide.classList.remove('active');
         activeSlide = nextSlide;
-        activeSlide.classList.add('active');
-        nextSlide = activeSlide.nextElementSibling;
-        previousSlide = activeSlide.previousElementSibling;
     } else if (direction === 'prev' && previousSlide !== null) {
-        activeSlide.classList.remove('active');
         activeSlide = previousSlide;
-        activeSlide.classList.add('active');
-        previousSlide = activeSlide.previousElementSibling;
-        nextSlide = activeSlide.nextElementSibling;
-    } else return;
+    } else activeSlide.classList.add('active');
+    
+    activeSlide.classList.add('active');
+    previousSlide = activeSlide.previousElementSibling;
+    nextSlide = activeSlide.nextElementSibling;
 
     changeBackground();
     changeNavActive();
@@ -78,45 +74,28 @@ scrollContainer.addEventListener('wheel', (e) => {
     }
 })
 
-allNavs.forEach(nav => nav.addEventListener('click', () => {
+const onNavClick = (e) => {
     allNavs.forEach(nav => nav.classList.remove('nav-active'));
     allSlides.forEach(slide => slide.classList.remove('active'));
-    if (nav === aboutNav) {
-        aboutNav.classList.add('nav-active');
+
+    if (e.target === aboutNav) {
         activeSlide = slideTwo;
-    } else if (nav === projectsNav) {
-        projectsNav.classList.add('nav-active');
+    } else if (e.target === projectsNav) {
         activeSlide = slideThree;
-    } else if (nav === contactNav) {
-        contactNav.classList.add('nav-active');
+    } else if (e.target === contactNav) {
         activeSlide = slideFive;
     }
+
     activeSlide.classList.add('active');
     nextSlide = activeSlide.nextElementSibling;
     previousSlide = activeSlide.previousElementSibling;
+    changeNavActive();
     changeBackground();
-}))
+}
 
-// Mobile
+allNavs.forEach(nav => nav.addEventListener('click', onNavClick))
+allNavs.forEach(nav => nav.addEventListener('touchend', onNavClick))
 
-allNavs.forEach(nav => nav.addEventListener('touchend', () => {
-    allNavs.forEach(nav => nav.classList.remove('nav-active'));
-    allSlides.forEach(slide => slide.classList.remove('active'));
-    if (nav === aboutNav) {
-        aboutNav.classList.add('nav-active');
-        activeSlide = slideTwo;
-    } else if (nav === projectsNav) {
-        projectsNav.classList.add('nav-active');
-        activeSlide = slideThree;
-    } else if (nav === contactNav) {
-        contactNav.classList.add('nav-active');
-        activeSlide = slideFive;
-    }
-    activeSlide.classList.add('active');
-    nextSlide = activeSlide.nextElementSibling;
-    previousSlide = activeSlide.previousElementSibling;
-    changeBackground();
-}))
 
 let startDirection;
 let moveDirection;
@@ -124,15 +103,17 @@ let moveDirection;
 scrollContainer.addEventListener('touchstart', (e) => {
     e.preventDefault();
     startDirection = parseInt(e.changedTouches[0].clientX)
+    // window.scrollTop = 0;
 })
 
 scrollContainer.addEventListener('touchmove', (e) => {
     e.preventDefault();
     moveDirection = parseInt(e.changedTouches[0].clientX);
-    const delta = moveDirection - startDirection;
-    const direction = delta < 0 ? 'next' : 'prev';
+    let delta = moveDirection - startDirection;
+    // window.scrollTop = 0;
 
     if (idle) {
-        changeSlide(direction);
+        let directionMobile = delta < 0 ? 'next' : 'prev';
+        changeSlide(directionMobile);
     }
 })
