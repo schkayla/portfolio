@@ -166,18 +166,16 @@ a:hover {
     display: none;
 }
 
-#slider-nav {
+nav {
     position: sticky;
     left: 35vw;
-    bottom: 5%;
-    width: 100vw;
     opacity: 0;
     animation: appear-from-right .5s ease .5s;
     animation-fill-mode: forwards;
     z-index: 99;
 }
 
-#slider-nav > ul {
+nav > ul {
     position: absolute;
     bottom: 5%;
     display: flex;
@@ -185,7 +183,7 @@ a:hover {
     list-style: none;
 }
 
-#slider-nav > ul > li {
+nav > ul > li {
     position: sticky;
     /* left: 5%; */
     margin: 0 1.5em;
@@ -193,7 +191,7 @@ a:hover {
     transition: all 0.3s ease;
 }
 
-#slider-nav > ul > li::before {
+nav > ul > li::before {
     content: "";
     display: block;
     position: absolute;
@@ -206,20 +204,19 @@ a:hover {
     transition: all 0.3s ease;
 }
 
-#slider-nav > ul > li > a:hover, a:focus {
+nav > ul > li:hover, a:focus {
     transform: translateY(3px) scale(1.02);
-    color:hsl(0, 0%, 85%);
+    color:hsla(0, 0%, 85%, 1);
 }
 
-#slider-nav > ul > li > a:hover::before, a:focus::before {
+nav > ul > li:hover::before, li:focus::before {
     background:hsla(0, 0%, 85%, 1);
     transform: scale(1.02);
 }
 
 .nav-active {
     transform: translateY(3px) scale(1.02);
-    color:hsl(0, 0%, 85%);
-    transform: scale(1.02);
+    color:hsla(0, 0%, 85%, 1);
 }
 
 .nav-active::before {
@@ -246,7 +243,7 @@ a:hover {
         max-width: 400px;
     }
 
-    #slider-nav {
+    nav {
         left: 30vw;
     }
 
@@ -328,7 +325,7 @@ a:hover {
         overflow: hidden;
     }
 
-    #slider-nav {
+    nav {
         left: 10vw;
     }
 
