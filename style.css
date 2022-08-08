@@ -29,7 +29,7 @@ body {
     font-weight: 400;
 }
 
-.outbound-link:hover {
+.outbound-link:hover, .outbound-link:active {
     text-decoration: underline;
 }
     
@@ -257,6 +257,15 @@ nav > ul > li:hover::before, li:focus::before {
 
     .slide {
         flex-direction: column;
+    }
+
+    .outbound-link {
+        text-decoration: underline;
+        transition: all 0.2s linear;
+    }
+
+    .outbound-link:active {
+        opacity: .75;
     }
 
     .column {

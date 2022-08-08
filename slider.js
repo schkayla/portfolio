@@ -6,7 +6,8 @@ let slideThree = document.getElementById('slide-three');
 let slideFour = document.getElementById('slide-four');
 let slideFive = document.getElementById('slide-five');
 
-const allNavs = document.querySelectorAll('nav ul li');
+const Navs = document.querySelectorAll('nav ul li');
+const Links = document.querySelectorAll('nav ul li a');
 const outboundLinks = document.querySelectorAll('.link');
 
 scrollContainer.addEventListener('wheel', (e) => {
@@ -20,17 +21,17 @@ slideObserver = new IntersectionObserver(function(entries, slideObserver) {
     entries.forEach(entry => {
         if (entry.isIntersecting) { 
             if (entry.target == slideTwo) {
-                allNavs.forEach(nav => nav.classList.remove('nav-active'));
-                allNavs[0].classList.add('nav-active');
+                Navs.forEach(nav => nav.classList.remove('nav-active'));
+                Navs[0].classList.add('nav-active');
             } else if (entry.target == slideThree) {
-                allNavs.forEach(nav => nav.classList.remove('nav-active'));
-                allNavs[1].classList.add('nav-active');
+                Navs.forEach(nav => nav.classList.remove('nav-active'));
+                Navs[1].classList.add('nav-active');
             } else if (entry.target == slideFour) {
-                allNavs.forEach(nav => nav.classList.remove('nav-active'));
-                allNavs[1].classList.add('nav-active');
+                Navs.forEach(nav => nav.classList.remove('nav-active'));
+                Navs[1].classList.add('nav-active');
             } else if (entry.target == slideFive) {
-                allNavs.forEach(nav => nav.classList.remove('nav-active'));
-                allNavs[2].classList.add('nav-active');
+                Navs.forEach(nav => nav.classList.remove('nav-active'));
+                Navs[2].classList.add('nav-active');
             }
         }
     })
@@ -47,26 +48,25 @@ function clickHandler (e) {
       });
 }
 
-allNavs.forEach(nav => nav.addEventListener('click', clickHandler))
-allNavs.forEach(nav => nav.addEventListener('touchend', clickHandler))
+Links.forEach(link => link.addEventListener('click', clickHandler))
+Links.forEach(link => link.addEventListener('touchend', clickHandler))
 
 let startDirection, moveDirection, endDirection;
 
 scrollContainer.addEventListener('touchstart', (e) => {
     e.preventDefault(); 
-    startDirection = parseInt(e.changedTouches[0].clientX)
-    console.log(startDirection, endDirection)
+    startDirection = parseInt(e.changedTouches[0].clientY)
 })
 
 scrollContainer.addEventListener('touchmove', (e) => {
     e.preventDefault();
-    moveDirection = parseInt(e.changedTouches[0].clientX);
+    moveDirection = parseInt(e.changedTouches[0].clientY);
     let delta = moveDirection - startDirection;
-    scrollContainer.scrollLeft += (delta / 4);
+    scrollContainer.scrollLeft += (delta / 25);
 })
 
 outboundLinks.forEach(link => link.addEventListener('touchend', (e) => {
     e.preventDefault();
-    endDirection = e.changedTouches[0].clientX;
+    endDirection = e.changedTouches[0].clientY;
     if (endDirection - startDirection < 2 && endDirection - startDirection > -2) window.location.href = e.target.href;
 }))
