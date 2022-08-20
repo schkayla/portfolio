@@ -111,11 +111,13 @@ a:hover {
 }
 
 .one-content > h1 {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 .two-content {
     width: 80%;
+    max-width: 800px;
+    column-count: 2;
 }
 
 .column {
@@ -124,8 +126,8 @@ a:hover {
 }
 
 .paragraph-spacing > * {
-    margin-bottom: 1em;
-    padding: 0 1em;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
 }
 
 .two-content-mobile {
