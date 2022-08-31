@@ -114,9 +114,27 @@ a:hover {
     margin-bottom: 1rem;
 }
 
+.arrow-first {
+    opacity: 0;
+    animation: arrow-first 1s linear 3s;
+    animation-fill-mode: forwards;
+}
+
+.arrow-second {
+    opacity: 0;
+    animation: arrow-second 1s linear 3s;
+    animation-fill-mode: forwards;
+}
+
+.arrow-third {
+    opacity: 0;
+    animation: arrow-third 1s linear 3s;
+    animation-fill-mode: forwards;
+}
+
 .two-content {
     width: 80%;
-    max-width: 800px;
+    max-width: 850px;
     column-count: 2;
 }
 
@@ -234,6 +252,48 @@ nav > ul > li:hover::before, li:focus::before {
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes arrow-first {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 40%;
+    }
+
+    60% {
+        opacity: 0;
+    }
+}
+
+@keyframes arrow-second {
+    20% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 40%;
+    }
+
+    80% {
+        opacity: 0;
+    }
+}
+
+@keyframes arrow-third {
+    40% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 40%;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
