@@ -72,6 +72,7 @@ a:hover {
 
 .name {
     position: sticky;
+    display: flex;
     left: 5%;
     padding: 2em 0;
     font-size: 1.2em;
@@ -83,6 +84,14 @@ a:hover {
 
 .name > a {
 	position: absolute;
+}
+
+.vertical-line {
+    background: hsl(0, 0%, 85%);
+    width: 3px;
+    height: 3em;
+    margin: 0 -0.5em;
+    border-radius: 2px;
 }
 
 #slide-one {

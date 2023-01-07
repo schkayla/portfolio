@@ -54,7 +54,7 @@ Links.forEach(link => link.addEventListener('touchend', clickHandler))
 let startDirection, moveDirection, endDirection;
 
 scrollContainer.addEventListener('touchstart', (e) => {
-    e.preventDefault(); 
+    // e.preventDefault(); 
     startDirection = parseInt(e.changedTouches[0].clientY)
 })
 
