@@ -20,17 +20,14 @@ const slideOptions = { threshold: .5 };
 slideObserver = new IntersectionObserver(function(entries, slideObserver) {
     entries.forEach(entry => {
         if (entry.isIntersecting) { 
+            Navs.forEach(nav => nav.classList.remove('nav-active'));
             if (entry.target == slideTwo) {
-                Navs.forEach(nav => nav.classList.remove('nav-active'));
                 Navs[0].classList.add('nav-active');
             } else if (entry.target == slideThree) {
-                Navs.forEach(nav => nav.classList.remove('nav-active'));
                 Navs[1].classList.add('nav-active');
             } else if (entry.target == slideFour) {
-                Navs.forEach(nav => nav.classList.remove('nav-active'));
                 Navs[1].classList.add('nav-active');
             } else if (entry.target == slideFive) {
-                Navs.forEach(nav => nav.classList.remove('nav-active'));
                 Navs[2].classList.add('nav-active');
             }
         }
@@ -54,7 +51,6 @@ Links.forEach(link => link.addEventListener('touchend', clickHandler))
 let startDirection, moveDirection, endDirection;
 
 scrollContainer.addEventListener('touchstart', (e) => {
-    // e.preventDefault(); 
     startDirection = parseInt(e.changedTouches[0].clientY)
 })
 
@@ -62,7 +58,7 @@ scrollContainer.addEventListener('touchmove', (e) => {
     e.preventDefault();
     moveDirection = parseInt(e.changedTouches[0].clientY);
     let delta = moveDirection - startDirection;
-    scrollContainer.scrollLeft += (delta / 25);
+    scrollContainer.scrollLeft += (delta / 10);
 })
 
 outboundLinks.forEach(link => link.addEventListener('touchend', (e) => {

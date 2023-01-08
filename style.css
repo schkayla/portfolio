@@ -324,6 +324,10 @@ nav > ul > li:hover::before, li:focus::before {
         font-size: 14px;
     }
 
+    body {
+        position: fixed;
+    }
+
     .slide {
         flex-direction: column;
     }
