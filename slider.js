@@ -6,8 +6,8 @@ let slideThree = document.getElementById('slide-three');
 let slideFour = document.getElementById('slide-four');
 let slideFive = document.getElementById('slide-five');
 
-const Navs = document.querySelectorAll('nav ul li');
-const Links = document.querySelectorAll('nav ul li a');
+const navs = document.querySelectorAll('nav ul li');
+const links = document.querySelectorAll('nav ul li a');
 const outboundLinks = document.querySelectorAll('.link');
 
 scrollContainer.addEventListener('wheel', (e) => {
@@ -20,15 +20,13 @@ const slideOptions = { threshold: .5 };
 slideObserver = new IntersectionObserver(function(entries, slideObserver) {
     entries.forEach(entry => {
         if (entry.isIntersecting) { 
-            Navs.forEach(nav => nav.classList.remove('nav-active'));
+            navs.forEach(nav => nav.classList.remove('nav-active'));
             if (entry.target == slideTwo) {
-                Navs[0].classList.add('nav-active');
-            } else if (entry.target == slideThree) {
-                Navs[1].classList.add('nav-active');
-            } else if (entry.target == slideFour) {
-                Navs[1].classList.add('nav-active');
+                navs[0].classList.add('nav-active');
+            } else if (entry.target == slideThree || entry.target == slideFour) {
+                navs[1].classList.add('nav-active');
             } else if (entry.target == slideFive) {
-                Navs[2].classList.add('nav-active');
+                navs[2].classList.add('nav-active');
             }
         }
     })
@@ -45,8 +43,8 @@ function clickHandler (e) {
       });
 }
 
-Links.forEach(link => link.addEventListener('click', clickHandler))
-Links.forEach(link => link.addEventListener('touchend', clickHandler))
+links.forEach(link => link.addEventListener('click', clickHandler))
+links.forEach(link => link.addEventListener('touchend', clickHandler))
 
 let startDirection, moveDirection, endDirection;
 
