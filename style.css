@@ -86,14 +86,14 @@ a:hover {
     position: absolute;
     /* display: flex; */
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     z-index: 9;
   }
 
 .name {
     position: sticky;
     display: flex;
-    width: 100px;
+    width: 80px;
     left: 5%;
     padding: 2em 0;
     font-size: 1.2em;
@@ -198,19 +198,10 @@ nav > ul > li:hover::before, li:focus::before {
     /* column-count: 2; */
 }
 
-/* .column {
-    flex: 50%;
-    max-width: 500px;
-} */
-
 .paragraph-spacing > * {
     margin-bottom: 1.5rem;
     padding: 0 1rem;
 }
-
-/* .two-content-mobile {
-    display: none;
-} */
 
 .three-content, .four-content {
     max-width: 35%;
@@ -244,11 +235,11 @@ nav > ul > li:hover::before, li:focus::before {
     margin-right: -15vw;
 }
 
-.five-img-mobile {
-    display: none;
+nav {
+    margin-bottom: 3%;
 }
 
-/******** KEYFRAMES ********/
+/******** KEYFRAMES & MEDIA QUERIES ********/
 
 @keyframes appear-from-right {
     0% {
@@ -261,50 +252,12 @@ nav > ul > li:hover::before, li:focus::before {
     }
 }
 
-@keyframes arrow-first {
-    0% {
-        opacity: 0;
-    }
-
-    30% {
-        opacity: 40%;
-    }
-
-    60% {
-        opacity: 0;
-    }
-}
-
-@keyframes arrow-second {
-    20% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 40%;
-    }
-
-    80% {
-        opacity: 0;
-    }
-}
-
-@keyframes arrow-third {
-    40% {
-        opacity: 0;
-    }
-
-    70% {
-        opacity: 40%;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
 @media only screen and (max-width: 900px) {
 
+    .two-content {
+        width: 65%;
+    }
+    
     .three-img > img {
         max-width: 400px;
     }
@@ -315,10 +268,6 @@ nav > ul > li:hover::before, li:focus::before {
 
     .four-img {
         max-width: 300px;
-    }
-
-    nav {
-        left: 30vw;
     }
 
 }
@@ -335,6 +284,7 @@ nav > ul > li:hover::before, li:focus::before {
 
     .swiper-slide {
         flex-direction: column;
+        /* touch-action: pan-x; */
     }
 
     .outbound-link {
@@ -346,9 +296,8 @@ nav > ul > li:hover::before, li:focus::before {
         opacity: .75;
     }
 
-    .column {
-        flex: 0;
-        width: 90%;
+    .name {
+        width: 50px;
     }
 
     #slide-three {
@@ -370,20 +319,16 @@ nav > ul > li:hover::before, li:focus::before {
     }
 
     .one-img > img {
-        max-width: 150px;
+        width: 150px;
     }
 
     .two-content {
-        display: none;
-    }
-
-    .two-content-mobile {
         display: block;
         width: 90%;
     }
 
     .three-img > img {
-        max-width: 300px;
+        width: 300px;
     }
 
     .three-content, .four-content {
@@ -404,22 +349,17 @@ nav > ul > li:hover::before, li:focus::before {
     }
 
     .five-img {
-        display: none;
+        height: 45vh;
+        align-items: flex-end;
     }
 
-    .five-img-mobile {
-        display: flex;
+     .five-img > img {
         width: 100vw;
-        height: 40vh;
-    }
-
-    .five-img-mobile > img {
         overflow: hidden;
     }
 
     nav {
-        left: 10vw;
-        margin-bottom: 12%;
+        margin-bottom: 18%;
     }
 
 }

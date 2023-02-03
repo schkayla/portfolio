@@ -8,9 +8,11 @@
         <title>kayrae | See my work</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preload" href="https://fonts.googleapis.com">
+        <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     </head>
     <body>
@@ -19,60 +21,52 @@
             <div class="sticky-container">
                 <div class="name">
                     <div class="vertical-line"></div>
-                    <a href="#">Kayla Schroetlin</a>
+                    <a href="#">Kayla Rae</a>
                 </div>
-
-                <nav>
-                    <ul>
-                        <li>About</li>
-                        <li>Projects</li>
-                        <li>Contact</li>
-                    </ul>
-                </nav>
             </div>  
 
             <div class="swiper-wrapper">
                 <div id="slide-one" class="swiper-slide">
                     <div class="one-img">
-                        <img src="images/portfolio-2-square.avif" alt="kayla smiling"> 
+                        <img src="images/portfolio-2-square.webP" alt="kayla smiling"> 
                     </div>
                     <div class="one-content paragraph-spacing">
                         <h1>Hi I'm Kayla</h1>
-                        <p>Here are some things I've created with JavaScript.</p>
+                        <p>Here are some things about me and my work.</p>
                         <div><a class="flex-link" href="https://github.com/schkayla" target="_blank" aria-label="my github profile" title="my github profile">
                         <span class="material-symbols-outlined arrow">arrow_right_alt</span>GitHub</a></div>
                     </div>
                 </div>
                 <div id="slide-two" class="swiper-slide">
-                    <div class="two-content two-content-mobile paragraph-spacing">
+                    <div class="two-content paragraph-spacing">
                         <p>After working in marketing and collaborating with contracted developers, I got curious about how websites are built. I enjoy a challenge, so when I learned that programming is problem solving, I started coding that very day.</p>
-                        <p>In my current role I've maintained websites, deployed a new website, and streamlined tedious processes. Recently, I completed a training on security and WordPress. I've also consulted with small business owners, helping them build or improve their websites and page rankings.</p>
+                        <p>In my current role I've maintained websites, deployed a new website, and streamlined tedious processes. Recently, I completed a training on security and WordPress. I've also consulted with small business owners, helping them build or improve their websites and page rankings. Two of my clients are <a class="outbound-link" href="https://carpenterinsurancenw.com/" target="_blank" aria-label="Carpenter Insurance" title="Carpenter Insurance">carpenterins.com</a> and <a class="outbound-link" href="https://paradisecakes406.com/" target="_blank" aria-label="Paradise Cakes" title="Paradise Cakes">paradisecakes406.com</a>.</p>
                         <p>I’m looking for a role where I can learn from other developers while achieving goals and improving efficiency. Also a cat mom, avid classic sci-fi reader, and sometimes musician.</p>
                     </div>
                 </div>
                 <div id="slide-three" class="swiper-slide">
-                    <div class="three-content paragraph-spacing column">
+                    <div class="three-content paragraph-spacing">
                         <h2><a class="outbound-link" href="https://schkayla.github.io/my-bookshelf/" target="_blank" aria-label="bookshelf project" title="bookshelf project">My Bookshelf</a></h2>
                         <p>an interactive way to see the books I've read and want to read, add and delete books from the database, and search by title or author</p>
                         <p class="small-text">Node.js | JavaScript | CSS | API</p>
                         <a class="flex-link" href="https://github.com/schkayla/my-bookshelf" target="_blank" aria-label="bookshelf project code" title="bookshelf project code">GitHub
                         <span class="material-symbols-outlined arrow">arrow_right_alt</span></a>
                     </div>
-                    <div class="three-img paragraph-spacing column">
-                        <img src="images/bookshelf-mockup.avif" alt="bookshelf project mockup desktop and mobile">
+                    <div class="three-img paragraph-spacing">
+                        <img src="images/bookshelf-mockup.webP" loading="lazy" alt="bookshelf project mockup desktop and mobile">
                     </div>                
                 </div>
                 <div id="slide-four" class="swiper-slide">
-                    <div class="four-content paragraph-spacing column">
-                        <img class="four-img" src="images/timer-mockup.avif" alt="music pomodoro project mockup desktop and mobile">
+                    <div class="four-content paragraph-spacing">
+                        <img class="four-img" src="images/timer-mockup.webP" loading="lazy" alt="music pomodoro project mockup desktop and mobile">
                         <h2><a class="outbound-link" href="https://schkayla.github.io/pomodoro-timer/" target="_blank" aria-label="music pomodoro project" title="music pomodoro project">Music Pomodoro</a></h2>
                         <p class="description">increase productivity by listening to a playlist while you work. Music pauses during break time so you don't have to watch the clock</p>
                         <p class="small-text"> JavaScript | CSS | HTML</p>
                         <a class="flex-link" href="https://github.com/schkayla/pomodoro-timer" target="_blank" aria-label="music pomodoro project code" title="music pomodoro project code">GitHub
                         <span class="material-symbols-outlined arrow">arrow_right_alt</span></a>
                     </div>
-                    <div class="four-content paragraph-spacing column">
-                        <img class="four-img" src="images/paradise-cakes-mockup.avif" alt="paradise cakes project mockup desktop and mobile">
+                    <div class="four-content paragraph-spacing">
+                        <img class="four-img" src="images/paradise-cakes-mockup.webP" loading="lazy" alt="paradise cakes project mockup desktop and mobile">
                         <h2><a class="outbound-link" href="https://schkayla.github.io/paradise-cakes/" target="_blank" aria-label="paradise cakes project" title="paradise cakes project">Paradise Cakes</a></h2>
                         <p class="description">brochure website for a client starting a new business, working on layout with this draft</p>
                         <p class="small-text">CSS | HTML | JavaScript</p>
@@ -85,16 +79,21 @@
                         <h2 class="">Contact</h2>
                         <p class="">send me an <a  class="outbound-link bold" href="mailto:schkayla@gmail.com" target="_blank" aria-label="email me" title="email me">email</a></p>
                     </div>
-                    <!-- desktop image -->
                     <div class="five-img">
-                        <img src="images/pexels-alex-conchillos-3745234.avif" alt="stars in space">
-                    </div>
-                    <!-- mobile image -->
-                    <div class="five-img-mobile">
-                        <img src="images/pexels-alex-conchillos-3745234-mobile.avif" alt="stars in space">
+                        <img src="images/pexels-alex-conchillos-3745234.webP" loading="lazy" alt="stars in space">
                     </div>
                 </div>
             </div>
+
+            <div class="sticky-container">
+                <nav>
+                    <ul>
+                        <li>About</li>
+                        <li>Projects</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+            </div>  
 
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
@@ -102,7 +101,7 @@
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-        <script src="slider.js"></script>
+        <script src="slider.min.js"></script>
         
     </body>
 </html>
